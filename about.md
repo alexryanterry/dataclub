@@ -4,15 +4,95 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+dataclub22:missing semester is brought to you by [Value Based Consulting](https://www.valuebasedconsulting.io/). This class is heavily adapted from MIT's "Independent Activities Period" course of the same name, which was made public and can be found [here](https://missing.csail.mit.edu/about/).
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+When you look for resources on learning to code, chances are you will find plenty of classes that teach you syntax of various languages, everything from Python to Javascript to React. But there is one essential topic that is rarely covered and is instead left for students to pick up on their own: computing ecosystem literacy.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Over the years, in our professional or personal lives, we have helped teach several friends and collegues learn to code, and over and over we have seen that many have limited knowledge of the tools available to them. Computers were built to automate manual tasks, yet many of us perform repetitive tasks by hand or fail to take full advantage of powerful tools such as version control and text editors. In the best case, this results in inefficiencies and wasted time; in the worst case, it results in issues like data loss or inability to complete certain tasks.
 
+These topics are not taught as part of the university curriculum or in intro learning to code courses: students are never shown how to use these tools, or at least not how to use them efficiently, and thus waste time and effort on tasks that _should_ be simple. The standard learn to code curriculum is missing critical topics about the computing ecosystem that could make students' lives significantly easier.
 
-[jekyll-organization]: https://github.com/jekyll
+# The missing semester of your coding education
+
+To help remedy this, we are running a class that covers all the topics we consider crucial to be an effective computer scientist and programmer. The class is pragmatic and practical, and it provides hands-on introduction to tools and techniques that you can immediately apply in a wide variety of
+situations you will encounter.
+
+This class is heavily adapted from MIT's "Independent Activities Period" course of the same name, which was made public and can be found [here](https://missing.csail.mit.edu/about/).
+
+If this sounds like it might be for you, here are some concrete examples of what the class will teach:
+
+## Command shell
+
+How to automate common and repetitive tasks with aliases, scripts, and build systems. No more copy-pasting commands from a text document. No more "run these 15 commands one after the other". No more "you forgot to run this thing" or "you forgot to pass this argument".
+
+For example, searching through your history quickly can be a huge time saver. We will show several tricks related to navigating your shell history for `convert` commands.
+
+<!--
+<video autoplay="autoplay" loop="loop" controls muted playsinline  oncontextmenu="return false;"  preload="auto"  class="demo">
+  <source src="/static/media/demos/history.mp4" type="video/mp4">
+</video> -->
+
+## Version control
+
+How to use version control _properly_, and take advantage of it to save you from disaster, collaborate with others, and quickly find and isolate problematic changes. No more `rm -rf; git clone`. No more merge conflicts (well, fewer of them at least). No more huge blocks of commented-out code. No more fretting over how to find what broke your code. No more "oh no, did we delete the working code?!". We'll even teach you how to contribute to other people's projects with pull requests!
+
+For example, we use `git bisect` to find which commit broke a unit test and then we fix it with `git revert`.
+
+<!-- <video autoplay="autoplay" loop="loop" controls muted playsinline  oncontextmenu="return false;"  preload="auto"  class="demo">
+
+  <source src="/static/media/demos/git.mp4" type="video/mp4">
+</video> -->
+
+## Text editing
+
+How to efficiently edit files from the command-line, both locally and remotely, and take advantage of advanced editor features. No more copying files back and forth. No more repetitive file editing.
+
+Vim macros are one of its best features, for example, we can quickly convert an html table to csv format using a nested vim macro.
+
+<!-- <video autoplay="autoplay" loop="loop" controls muted playsinline  oncontextmenu="return false;"  preload="auto"  class="demo">
+
+  <source src="/static/media/demos/vim.mp4" type="video/mp4">
+</video> -->
+
+## Remote machines
+
+How to stay sane when working with remote machines using SSH keys and terminal multiplexing. No more keeping many terminals open just to run two commands at once. No more typing your password every time you connect. No more losing everything just because your Internet disconnected or you had to reboot your laptop.
+
+For example below, we can use `tmux` to keep sessions alive in remote servers and `mosh` to support network roaming and disconnection.
+
+<!--
+<video autoplay="autoplay" loop="loop" controls muted playsinline  oncontextmenu="return false;"  preload="auto"  class="demo">
+  <source src="/static/media/demos/ssh.mp4" type="video/mp4">
+</video> -->
+
+## Finding files
+
+How to quickly find files that you are looking for. No more clicking through files in your project until you find the one that has the code you want.
+
+For example, we can quickly look for files with `fd` and for code snippets with `rg`. We also quickly `cd` and `vim` recent/frequent files/folder using `fasd`.
+
+<!--
+<video autoplay="autoplay" loop="loop" controls muted playsinline  oncontextmenu="return false;"  preload="auto"  class="demo">
+  <source src="/static/media/demos/find.mp4" type="video/mp4">
+</video> -->
+
+## Data wrangling
+
+How to quickly and easily modify, view, parse, plot, and compute over data and files directly from the command-line. No more copy pasting from log files. No more manually computing statistics over data. No more spreadsheet plotting.
+
+## Virtual machines
+
+How to use virtual machines to try out new operating systems, isolate unrelated projects, and keep your main machine clean and tidy. No more accidentally corrupting your computer while doing a security lab. No more millions of randomly installed packages with differing versions.
+
+## Security
+
+How to be on the Internet without immediately revealing all of your secrets to the world. No more coming up with passwords that match the insane criteria yourself. No more unsecured, open WiFi networks. No more unencrypted messaging.
+
+# Conclusion
+
+This, and more, will be covered across the class lectures, each including an exercise for you to get more familiar with the tools on your own.
+
+Looking forward to learning together!
+
+Happy hacking,<br>
+[Alex and Brian](https://www.valuebasedconsulting.io/)
