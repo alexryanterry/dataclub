@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-dataclub22:missing semester is brought to you by [Value Based Consulting](https://www.valuebasedconsulting.io/). This class is heavily adapted from MIT's "Independent Activities Period" course of the same name, which was made public and can be found [here](https://missing.csail.mit.edu/about/).
+dataclub22:missing semester is brought to you by [Value Based Consulting](https://www.valuebasedconsulting.io/). This class is heavily adapted from MIT's "Independent Activities Period" course of the same name, which was made public and can be found [here](https://missing.csail.mit.edu/).
 
 When you look for resources on learning to code, chances are you will find plenty of classes that teach you syntax of various languages, everything from Python to Javascript to React. But there is one essential topic that is rarely covered and is instead left for students to pick up on their own: computing ecosystem literacy.
 
