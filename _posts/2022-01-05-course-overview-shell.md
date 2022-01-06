@@ -316,7 +316,7 @@ We have not written solutions for the exercises. If you are stuck on anything in
 1.  Write the following into that file, one line at a time:
     ```
     #!/bin/sh
-    curl --head --silent https://missing.csail.mit.edu
+    curl --head --silent https://bkvbc.github.io/dataclub2022/
     ```
     The first line might be tricky to get working. It's helpful to know that
     `#` starts a comment in Bash, and `!` has a special meaning even within
