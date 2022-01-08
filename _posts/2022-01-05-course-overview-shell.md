@@ -37,6 +37,10 @@ their output in a semi-structured way.
 In this lecture, we will focus on the Bourne Again SHell, or "bash" for short. This is one of the most widely used shells, and its syntax is similar to what you will see in many other shells. To open a shell _prompt_ (where you can type commands), you first need a _terminal_.
 Your device probably shipped with one installed, or you can install one fairly easily.
 
+## Why is the shell important?
+
+If you're writing code, the shell is used for EVERYTHINGGGGG!!! This includes testing your code, deploying your code, engaging with servers, debugging logs, etc. etc. etc.
+
 ## Using the shell
 
 When you launch your terminal, you will see a _prompt_ that often looks a little like this:
@@ -235,6 +239,18 @@ missing:~$ curl --head --silent google.com | grep --ignore-case content-length |
 We will go into a lot more detail about how to take advantage of pipes
 in the lecture on data wrangling.
 
+## Handy tips and tricks
+
+Unless you use a command a ton, nobody really remembers the commands they execute. we google them or execute them once, and then we forget. There are a couple of tools you can use for this. I've included a couple of them below, and a few more are in the exercises.
+
+1. Cycle through commands
+
+Use your "up" arrow to go to the previous command you typed in, or your "down" arrow to go to the next command you typed in
+
+1. Tab complete
+
+Just hit Tab while typing a command, option, or file name and the shell environment will automatically complete what you’re typing or suggest options to you.
+
 ## A versatile and powerful tool
 
 On most Unix-like systems, one user is special: the "root" user. You may
@@ -330,3 +346,6 @@ We have not written solutions for the exercises. If you are stuck on anything in
 1.  Use `chmod` to make it possible to run the command `./semester` rather than having to type `sh semester`. How does your shell know that the file is supposed to be interpreted using `sh`? See this page on the [shebang](<https://en.wikipedia.org/wiki/Shebang_(Unix)>) line for more information.
 1.  Use `|` and `>` to write the "last modified" date output by `semester` into a file called `last-modified.txt` in your home directory.
 1.  Write a command that reads out your laptop battery's power level or your desktop machine's CPU temperature from `/sys`. Note: if you're a macOS user, your OS doesn't have sysfs, so you can skip this exercise.
+1.  [Check out](https://github.com/zsh-users/zsh-autosuggestions) and try to install [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md). Note that this will require some knowledge or research of how to install packages on Linux or macOS.
+1.  On your own, find a tutorial to research and try to find a practical use for the `xargs` command
+1.  macOS only: Research and investigate [reverse search](https://codeburst.io/use-reverse-i-search-to-quickly-navigate-through-your-history-917f4d7ffd37) to quickly cycle back through commands you typed in the past but forgot about.
