@@ -243,11 +243,11 @@ in the lecture on data wrangling.
 
 Unless you use a command a ton, nobody really remembers the commands they execute. we google them or execute them once, and then we forget. There are a couple of tools you can use for this. I've included a couple of them below, and a few more are in the exercises.
 
-1. Cycle through commands
+**Cycle through commands**
 
 Use your "up" arrow to go to the previous command you typed in, or your "down" arrow to go to the next command you typed in
 
-1. Tab complete
+**Tab complete**
 
 Just hit Tab while typing a command, option, or file name and the shell environment will automatically complete what you’re typing or suggest options to you.
 
