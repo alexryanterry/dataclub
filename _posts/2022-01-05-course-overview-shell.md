@@ -239,19 +239,7 @@ missing:~$ curl --head --silent google.com | grep --ignore-case content-length |
 We will go into a lot more detail about how to take advantage of pipes
 in the lecture on data wrangling.
 
-## Handy tips and tricks
-
-Unless you use a command a ton, nobody really remembers the commands they execute. we google them or execute them once, and then we forget. There are a couple of tools you can use for this. I've included a couple of them below, and a few more are in the exercises.
-
-**Cycle through commands**
-
-Use your "up" arrow to go to the previous command you typed in, or your "down" arrow to go to the next command you typed in
-
-**Tab complete**
-
-Just hit Tab while typing a command, option, or file name and the shell environment will automatically complete what you’re typing or suggest options to you.
-
-## A versatile and powerful tool
+## Admin user
 
 On most Unix-like systems, one user is special: the "root" user. You may
 have seen it in the file listings above. The root user is above (almost)
@@ -263,6 +251,18 @@ lets you "do" something "as su" (short for "super user", or "root").
 When you get permission denied errors, it is usually because you need to
 do something as root. Though make sure you first double-check that you
 really wanted to do it that way!
+
+## Handy tips and tricks
+
+Unless you use a command a ton, nobody really remembers the commands they execute. we google them or execute them once, and then we forget. There are a couple of tools you can use for this. I've included a couple of them below, and a few more are in the exercises.
+
+**Cycle through commands**
+
+Use your "up" arrow to go to the previous command you typed in, or your "down" arrow to go to the next command you typed in
+
+**Tab complete**
+
+Just hit Tab while typing a command, option, or file name and the shell environment will automatically complete what you’re typing or suggest options to you.
 
 # Next steps
 
