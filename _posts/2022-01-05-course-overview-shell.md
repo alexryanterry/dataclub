@@ -264,52 +264,6 @@ When you get permission denied errors, it is usually because you need to
 do something as root. Though make sure you first double-check that you
 really wanted to do it that way!
 
-One thing you need to be root in order to do is writing to the `sysfs` file
-system mounted under `/sys`. `sysfs` exposes a number of kernel parameters as
-files, so that you can easily reconfigure the kernel on the fly without
-specialized tools. **Note that sysfs does not exist on Windows or macOS.**
-
-For example, the brightness of your laptop's screen is exposed through a file
-called `brightness` under
-
-```
-/sys/class/backlight
-```
-
-By writing a value into that file, we can change the screen brightness.
-Your first instinct might be to do something like:
-
-```console
-$ sudo find -L /sys/class/backlight -maxdepth 2 -name '*brightness*'
-/sys/class/backlight/thinkpad_screen/brightness
-$ cd /sys/class/backlight/thinkpad_screen
-$ sudo echo 3 > brightness
-An error occurred while redirecting file 'brightness'
-open: Permission denied
-```
-
-This error may come as a surprise. After all, we ran the command with
-`sudo`! This is an important thing to know about the shell. Operations
-like `|`, `>`, and `<` are done _by the shell_, not by the individual
-program. `echo` and friends do not "know" about `|`. They just read from
-their input and write to their output, whatever it may be. In the case
-above, the _shell_ (which is authenticated just as your user) tries to
-open the brightness file for writing, before setting that as `sudo echo`'s output, but is prevented from doing so since the shell does not
-run as root. Using this knowledge, we can work around this:
-
-```console
-$ echo 3 | sudo tee brightness
-```
-
-Since the `tee` program is the one to open the `/sys` file for writing,
-and _it_ is running as `root`, the permissions all work out. You can
-control all sorts of fun and useful things through `/sys`, such as the
-state of various system LEDs (your path might be different):
-
-```console
-$ echo 1 | sudo tee /sys/class/leds/input6::scrolllock/brightness
-```
-
 # Next steps
 
 At this point you know your way around a shell enough to accomplish
@@ -332,7 +286,7 @@ We have not written solutions for the exercises. If you are stuck on anything in
 1.  Write the following into that file, one line at a time:
     ```
     #!/bin/sh
-    curl --head --silent https://valuebasedconsulting.github.io/dataclub2022/
+    curl --head --silent https://valuebasedconsulting.github.io/dataclub/
     ```
     The first line might be tricky to get working. It's helpful to know that
     `#` starts a comment in Bash, and `!` has a special meaning even within
@@ -345,7 +299,5 @@ We have not written solutions for the exercises. If you are stuck on anything in
 1.  Look up the `chmod` program (e.g. use `man chmod`).
 1.  Use `chmod` to make it possible to run the command `./semester` rather than having to type `sh semester`. How does your shell know that the file is supposed to be interpreted using `sh`? See this page on the [shebang](<https://en.wikipedia.org/wiki/Shebang_(Unix)>) line for more information.
 1.  Use `|` and `>` to write the "last modified" date output by `semester` into a file called `last-modified.txt` in your home directory.
-1.  Write a command that reads out your laptop battery's power level or your desktop machine's CPU temperature from `/sys`. Note: if you're a macOS user, your OS doesn't have sysfs, so you can skip this exercise.
 1.  [Check out](https://github.com/zsh-users/zsh-autosuggestions) and try to install [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md). Note that this will require some knowledge or research of how to install packages on Linux or macOS.
-1.  On your own, find a tutorial to research and try to find a practical use for the `xargs` command
-1.  macOS only: Research and investigate [reverse search](https://codeburst.io/use-reverse-i-search-to-quickly-navigate-through-your-history-917f4d7ffd37) to quickly cycle back through commands you typed in the past but forgot about.
+1.  Research and investigate [reverse search](https://codeburst.io/use-reverse-i-search-to-quickly-navigate-through-your-history-917f4d7ffd37) to quickly cycle back through commands you typed in the past but forgot about.
