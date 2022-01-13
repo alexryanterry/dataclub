@@ -377,4 +377,12 @@ cat out.txt
 
         If you're on macOS, note that the default BSD `find` is different from the one included in [GNU coreutils](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands). You can use `-print0` on `find` and the `-0` flag on `xargs`. As a macOS user, you should be aware that command-line utilities shipped with macOS may differ from the GNU counterparts; you can install the GNU versions if you like by [using brew](https://formulae.brew.sh/formula/coreutils).
 
-1.  (Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?
+1. Install a new package in Ubuntu and browsing your filesystem graphically
+* Update your linux system with `sudo apt-get update` then `sudo apt-get upgrade` 
+* You’ll need to hit “enter” to  get  it to continue/finish this update
+* This will run as administrator, so it will ask you for your password, which is the original password you gave Ubuntu when you first installed it; if you forgot that, try following [these instructions](https://askubuntu.com/questions/931940/unable-to-change-the-root-password-in-windows-10-wsl)
+* Then, install tree with  `sudo apt-get install tree` (you’ll need to hit “enter” again like before) 
+* Install and broot with  `sudo apt-get install broot` (you’ll need to hit “enter” again like before)
+* Now you can try these commands by simply entering  `tree`, which will give you a color coded “tree” view of your directory structure from your shell.
+* Enter  `broot`  to try broot, which is even more powerful. It will allow you to navigate your linux directory kind of like windows explorer. 
+1. (Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?
