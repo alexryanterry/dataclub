@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Wrangling"
-date: 2020-01-24
+date: 2020-01-24 11:00
 ---
 
 Have you ever wanted to take data in one format and turn it into a
