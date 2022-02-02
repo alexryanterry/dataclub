@@ -9,7 +9,6 @@ In this lecture we will go through several ways in which you can improve your wo
 
 We will also learn about different ways to improve your shell and other tools, by defining aliases and configuring them using dotfiles. Both of these can help you save time, e.g. by using the same configurations in all your machines without having to type long commands. We will look at how to work with remote machines using SSH.
 
-
 # Job Control
 
 In some cases you will need to interrupt a job while it is executing, for instance if a command is taking too long to complete (such as a `find` with a very large directory structure to search through).
@@ -119,8 +118,7 @@ $ jobs
 
 A special signal is `SIGKILL` since it cannot be captured by the process and it will always terminate it immediately. However, it can have bad side effects such as leaving orphaned children processes.
 
-You can learn more about these and other signals [here](https://en.wikipedia.org/wiki/Signal_(IPC)) or typing [`man signal`](https://www.man7.org/linux/man-pages/man7/signal.7.html) or `kill -l`.
-
+You can learn more about these and other signals [here](<https://en.wikipedia.org/wiki/Signal_(IPC)>) or typing [`man signal`](https://www.man7.org/linux/man-pages/man7/signal.7.html) or `kill -l`.
 
 # Terminal Multiplexers
 
@@ -135,28 +133,31 @@ This can make your workflow much better when working with remote machines since 
 The most popular terminal multiplexer these days is [`tmux`](https://www.man7.org/linux/man-pages/man1/tmux.1.html). `tmux` is highly configurable and by using the associated keybindings you can create multiple tabs and panes and quickly navigate through them.
 
 `tmux` expects you to know its keybindings, and they all have the form `<C-b> x` where that means (1) press `Ctrl+b`, (2) release `Ctrl+b`, and then (3) press `x`. `tmux` has the following hierarchy of objects:
+
 - **Sessions** - a session is an independent workspace with one or more windows
-    + `tmux` starts a new session.
-    + `tmux new -s NAME` starts it with that name.
-    + `tmux ls` lists the current sessions
-    + Within `tmux` typing `<C-b> d`  detaches the current session
-    + `tmux a` attaches the last session. You can use `-t` flag to specify which
+
+  - `tmux` starts a new session.
+  - `tmux new -s NAME` starts it with that name.
+  - `tmux ls` lists the current sessions
+  - Within `tmux` typing `<C-b> d` detaches the current session
+  - `tmux a` attaches the last session. You can use `-t` flag to specify which
 
 - **Windows** - Equivalent to tabs in editors or browsers, they are visually separate parts of the same session
-    + `<C-b> c` Creates a new window. To close it you can just terminate the shells doing `<C-d>`
-    + `<C-b> N` Go to the _N_ th window. Note they are numbered
-    + `<C-b> p` Goes to the previous window
-    + `<C-b> n` Goes to the next window
-    + `<C-b> ,` Rename the current window
-    + `<C-b> w` List current windows
+
+  - `<C-b> c` Creates a new window. To close it you can just terminate the shells doing `<C-d>`
+  - `<C-b> N` Go to the _N_ th window. Note they are numbered
+  - `<C-b> p` Goes to the previous window
+  - `<C-b> n` Goes to the next window
+  - `<C-b> ,` Rename the current window
+  - `<C-b> w` List current windows
 
 - **Panes** - Like vim splits, panes let you have multiple shells in the same visual display.
-    + `<C-b> "` Split the current pane horizontally
-    + `<C-b> %` Split the current pane vertically
-    + `<C-b> <direction>` Move to the pane in the specified _direction_. Direction here means arrow keys.
-    + `<C-b> z` Toggle zoom for the current pane
-    + `<C-b> [` Start scrollback. You can then press `<space>` to start a selection and `<enter>` to copy that selection.
-    + `<C-b> <space>` Cycle through pane arrangements.
+  - `<C-b> "` Split the current pane horizontally
+  - `<C-b> %` Split the current pane vertically
+  - `<C-b> <direction>` Move to the pane in the specified _direction_. Direction here means arrow keys.
+  - `<C-b> z` Toggle zoom for the current pane
+  - `<C-b> [` Start scrollback. You can then press `<space>` to start a selection and `<enter>` to copy that selection.
+  - `<C-b> <space>` Cycle through pane arrangements.
 
 For further reading,
 [here](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/) is a quick tutorial on `tmux` and [this](http://linuxcommand.org/lc3_adv_termmux.php) has a more detailed explanation that covers the original `screen` command. You might also want to familiarize yourself with [`screen`](https://www.man7.org/linux/man-pages/man1/screen.1.html), since it comes installed in most UNIX systems.
@@ -210,7 +211,6 @@ alias ll
 Note that aliases do not persist shell sessions by default.
 To make an alias persistent you need to include it in shell startup files, like `.bashrc` or `.zshrc`, which we are going to introduce in the next section.
 
-
 # Dotfiles
 
 Many programs are configured using plain-text files known as _dotfiles_
@@ -238,13 +238,13 @@ under version control, and **symlinked** into place using a script. This has
 the benefits of:
 
 - **Easy installation**: if you log in to a new machine, applying your
-customizations will only take a minute.
+  customizations will only take a minute.
 - **Portability**: your tools will work the same way everywhere.
 - **Synchronization**: you can update your dotfiles anywhere and keep them all
-in sync.
+  in sync.
 - **Change tracking**: you're probably going to be maintaining your dotfiles
-for your entire programming career, and version history is nice to have for
-long-lived projects.
+  for your entire programming career, and version history is nice to have for
+  long-lived projects.
 
 What should you put in your dotfiles?
 You can learn about your tool's settings by reading online documentation or
@@ -262,7 +262,6 @@ copy configurations though).
 All of the class instructors have their dotfiles publicly accessible on GitHub: [Anish](https://github.com/anishathalye/dotfiles),
 [Jon](https://github.com/jonhoo/configs),
 [Jose](https://github.com/jjgo/dotfiles).
-
 
 ## Portability
 
@@ -323,7 +322,6 @@ An often overlooked feature of `ssh` is the ability to run commands directly.
 `ssh foobar@server ls` will execute `ls` in the home folder of foobar.
 It works with pipes, so `ssh foobar@server ls | grep PATTERN` will grep locally the remote output of `ls` and `ls | ssh foobar@server grep PATTERN` will grep remotely the local output of `ls`.
 
-
 ## SSH Keys
 
 Key-based authentication exploits public-key cryptography to prove to the server that the client owns the secret private key without revealing the key. This way you do not need to reenter your password every time. Nevertheless, the private key (often `~/.ssh/id_rsa` and more recently `~/.ssh/id_ed25519`) is effectively your password, so treat it like so.
@@ -331,9 +329,11 @@ Key-based authentication exploits public-key cryptography to prove to the server
 ### Key generation
 
 To generate a pair you can run [`ssh-keygen`](https://www.man7.org/linux/man-pages/man1/ssh-keygen.1.html).
+
 ```bash
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519
 ```
+
 You should choose a passphrase, to avoid someone who gets hold of your private key to access authorized servers. Use [`ssh-agent`](https://www.man7.org/linux/man-pages/man1/ssh-agent.1.html) or [`gpg-agent`](https://linux.die.net/man/1/gpg-agent) so you do not have to type your passphrase every time.
 
 If you have ever configured pushing to GitHub using SSH keys, then you have probably done the steps outlined [here](https://help.github.com/articles/connecting-to-github-with-ssh/) and have a valid key pair already. To check if you have a passphrase and validate it you can run `ssh-keygen -y -f /path/to/key`.
@@ -368,17 +368,17 @@ This is called _port forwarding_ and it
 comes in two flavors: Local Port Forwarding and Remote Port Forwarding (see the pictures for more details, credit of the pictures from [this StackOverflow post](https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot)).
 
 **Local Port Forwarding**
-![Local Port Forwarding](https://i.stack.imgur.com/a28N8.png  "Local Port Forwarding")
+![Local Port Forwarding](https://i.stack.imgur.com/a28N8.png "Local Port Forwarding")
 
 **Remote Port Forwarding**
-![Remote Port Forwarding](https://i.stack.imgur.com/4iK3b.png  "Remote Port Forwarding")
+![Remote Port Forwarding](https://i.stack.imgur.com/4iK3b.png "Remote Port Forwarding")
 
-The most common scenario is local port forwarding, where a service in the remote machine listens in a port and you want to link a port in your local machine to forward to the remote port. For example, if we execute  `jupyter notebook` in the remote server that listens to the port `8888`. Thus, to forward that to the local port `9999`, we would do `ssh -L 9999:localhost:8888 foobar@remote_server` and then navigate to `locahost:9999` in our local machine.
-
+The most common scenario is local port forwarding, where a service in the remote machine listens in a port and you want to link a port in your local machine to forward to the remote port. For example, if we execute `jupyter notebook` in the remote server that listens to the port `8888`. Thus, to forward that to the local port `9999`, we would do `ssh -L 9999:localhost:8888 foobar@remote_server` and then navigate to `locahost:9999` in our local machine.
 
 ## SSH Configuration
 
 We have covered many many arguments that we can pass. A tempting alternative is to create shell aliases that look like
+
 ```bash
 alias my_server="ssh -i ~/.id_ed25519 --port 2222 -L 9999:localhost:8888 foobar@remote_server
 ```
@@ -398,8 +398,7 @@ Host *.mit.edu
     User foobaz
 ```
 
-An additional advantage of using the `~/.ssh/config` file over aliases  is that other programs like `scp`, `rsync`, `mosh`, &c are able to read it as well and convert the settings into the corresponding flags.
-
+An additional advantage of using the `~/.ssh/config` file over aliases is that other programs like `scp`, `rsync`, `mosh`, &c are able to read it as well and convert the settings into the corresponding flags.
 
 Note that the `~/.ssh/config` file can be considered a dotfile, and in general it is fine for it to be included with the rest of your dotfiles. However, if you make it public, think about the information that you are potentially providing strangers on the internet: addresses of your servers, users, open ports, &c. This may facilitate some types of attacks so be thoughtful about sharing your SSH configuration.
 
@@ -411,7 +410,6 @@ A common pain when connecting to a remote server are disconnections due to shutt
 
 Sometimes it is convenient to mount a remote folder. [sshfs](https://github.com/libfuse/sshfs) can mount a folder on a remote server
 locally, and then you can use a local editor.
-
 
 # Shells & Frameworks
 
@@ -456,9 +454,7 @@ Since you might be spending hundreds to thousands of hours in your terminal it p
 1. From what we have seen, we can use some `ps aux | grep` commands to get our jobs' pids and then kill them, but there are better ways to do it. Start a `sleep 10000` job in a terminal, background it with `Ctrl-Z` and continue its execution with `bg`. Now use [`pgrep`](https://www.man7.org/linux/man-pages/man1/pgrep.1.html) to find its pid and [`pkill`](http://man7.org/linux/man-pages/man1/pgrep.1.html) to kill it without ever typing the pid itself. (Hint: use the `-af` flags).
 
 1. Say you don't want to start a process until another completes. How would you go about it? In this exercise, our limiting process will always be `sleep 60 &`.
-One way to achieve this is to use the [`wait`](https://www.man7.org/linux/man-pages/man1/wait.1p.html) command. Try launching the sleep command and having an `ls` wait until the background process finishes.
-    However, this strategy will fail if we start in a different bash session, since `wait` only works for child processes. One feature we did not discuss in the notes is that the `kill` command's exit status will be zero on success and nonzero otherwise. `kill -0` does not send a signal but will give a nonzero exit status if the process does not exist.
-    Write a bash function called `pidwait` that takes a pid and waits until the given process completes. You should use `sleep` to avoid wasting CPU unnecessarily.
+   One way to achieve this is to use the [`wait`](https://www.man7.org/linux/man-pages/man1/wait.1p.html) command. Try launching the sleep command and having an `ls` wait until the background process finishes.
 
 ## Terminal multiplexer
 
@@ -468,12 +464,12 @@ One way to achieve this is to use the [`wait`](https://www.man7.org/linux/man-pa
 
 1. Create an alias `dc` that resolves to `cd` for when you type it wrongly.
 
-1.  Run `history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10`  to get your top 10 most used commands and consider writing shorter aliases for them. Note: this works for Bash; if you're using ZSH, use `history 1` instead of just `history`.
-
+1. Run `history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10` to get your top 10 most used commands and consider writing shorter aliases for them. Note: this works for Bash; if you're using ZSH, use `history 1` instead of just `history`.
 
 ## Dotfiles
 
 Let's get you up to speed with dotfiles.
+
 1. Create a folder for your dotfiles and set up version
    control.
 1. Add a configuration for at least one program, e.g. your shell, with some
@@ -491,13 +487,14 @@ Install a Linux virtual machine (or use an already existing one) for this exerci
 1. Go to `~/.ssh/` and check if you have a pair of SSH keys there. If not, generate them with `ssh-keygen -o -a 100 -t ed25519`. It is recommended that you use a password and use `ssh-agent` , more info [here](https://www.ssh.com/ssh/agent).
 1. Edit `.ssh/config` to have an entry as follows
 
-    ```bash
-    Host vm
-        User username_goes_here
-        HostName ip_goes_here
-        IdentityFile ~/.ssh/id_ed25519
-        LocalForward 9999 localhost:8888
-    ```
+   ```bash
+   Host vm
+       User username_goes_here
+       HostName ip_goes_here
+       IdentityFile ~/.ssh/id_ed25519
+       LocalForward 9999 localhost:8888
+   ```
+
 1. Use `ssh-copy-id vm` to copy your ssh key to the server.
 1. Start a webserver in your VM by executing `python -m http.server 8888`. Access the VM webserver by navigating to `http://localhost:9999` in your machine.
-1. Edit your SSH server config by doing  `sudo vim /etc/ssh/sshd_config` and disable password authentication by editing the value of `PasswordAuthentication`. Disable root login by editing the value of `PermitRootLogin`. Restart the `ssh` service with `sudo service sshd restart`. Try sshing in again.
+1. Edit your SSH server config by doing `sudo vim /etc/ssh/sshd_config` and disable password authentication by editing the value of `PasswordAuthentication`. Disable root login by editing the value of `PermitRootLogin`. Restart the `ssh` service with `sudo service sshd restart`. Try sshing in again.
