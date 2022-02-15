@@ -232,3 +232,38 @@ push to `master` and makes the built site available on a particular
 GitHub domain. This makes it trivial for us to update the website! We
 just make our changes locally, commit them with git, and then push. CI
 takes care of the rest.
+
+# Exercises
+
+1. Install [`shellcheck`](https://www.shellcheck.net/) and try checking the following script. What is wrong with the code? Fix it. Install a linter plugin in your editor so you can get your warnings automatically.
+
+   ```bash
+   #!/bin/sh
+   ## Example: a typical script with several problems
+   for f in $(ls *.m3u)
+   do
+     grep -qi hq.*mp3 $f \
+       && echo -e 'Playlist $f contains a HQ file in mp3 format'
+   done
+   ```
+
+1. Take a look at the various ways to specify version requirements for
+   dependencies in [Rust's build
+   system](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html).
+   Most package repositories support similar syntax. For each one
+   (caret, tilde, wildcard, comparison, and multiple), try to come up
+   with a use-case in which that particular kind of requirement makes
+   sense.
+1. Set up a simple auto-published page using [GitHub
+   Pages](https://pages.github.com/).
+   Add a [GitHub Action](https://github.com/features/actions) to the
+   repository to run `shellcheck` on any shell files in that
+   repository (here is [one way to do
+   it](https://github.com/marketplace/actions/shellcheck)). Check that
+   it works!
+1. [Build your
+   own](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/building-actions)
+   GitHub action to run [`proselint`](http://proselint.com/) or
+   [`write-good`](https://github.com/btford/write-good) on all the
+   `.md` files in the repository. Enable it in your repository, and
+   check that it works by filing a pull request with a typo in it.
