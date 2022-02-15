@@ -33,7 +33,7 @@ A second approach is to use logging in your program, instead of ad hoc print sta
 - Logging supports severity levels (such as INFO, DEBUG, WARN, ERROR, &c), that allow you to filter the output accordingly.
 - For new issues, there's a fair chance that your logs will contain enough information to detect what is going wrong.
 
-[Here](/static/files/logger.py) is an example code that logs messages:
+[Here](https://missing.csail.mit.edu/static/files/logger.py) is an example code that logs messages:
 
 ```bash
 $ python logger.py
