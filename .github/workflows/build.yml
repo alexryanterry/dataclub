@@ -32,3 +32,4 @@ jobs:
             https://en.wikipedia.org/wiki/Main_Page
           url_ignore_re: |
             ^https://twitter.com/
+          assume-extension: ./_site
