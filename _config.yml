@@ -17,7 +17,7 @@ title: dataclub22:missing semester
 email: bk@valuebasedconsulting.io
 description: >- # this means to ignore newlines until "baseurl:"
   Learn to code with Value Based Consulting
-domain: valuebasedconsulting.github.io
+#domain: valuebasedconsulting.github.io
 baseurl: "/dataclub" # the subpath of your site, e.g. /blog
 url: "https://valuebasedconsulting.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
