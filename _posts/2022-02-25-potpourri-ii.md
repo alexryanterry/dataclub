@@ -185,3 +185,20 @@ There are two primary ways in which people contribute to projects on GitHub:
   larger projects will have a contributing guide, tag beginner-friendly issues,
   and some even have mentorship programs to help first-time contributors become
   familiar with the project.
+
+## Exercises
+
+1. Figure out how to remap your Caps Lock key to something you use more often (such as Escape or Ctrl or Backspace).
+
+1. Make a custom global keyboard shortcut to open a new terminal window or a new browser window.
+
+1. Consider how you are (not) backing up your data and look into fixing/improving that.
+
+1. Figure out how to backup your email accounts
+
+1. Choose a webservice you use often (Spotify, Google Music, etc.) and figure out what options for backing up your data are. Often people have already made tools (such as youtube-dl) solutions based on available APIs.
+
+1. Find and use a web api to get the weather in your city/area, and/or browse/try an IFTTT or Zapier recipe.
+1. Play around with Markdown on a web editor like [this one](https://dillinger.io/)
+
+1. Try Docker and install a simple Linux image on the container. And/or, user VirutalBox to install a VM with another operating system. Try SSHing into the container or VM.
